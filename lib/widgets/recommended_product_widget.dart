@@ -35,7 +35,7 @@ class _RecomProductWidgetState extends State<RecomProductWidget> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => ProductsDetailsPage(
+                      builder: (context) => ProductDetailsPage(
                             prodName: productList[index]['name'],
                             prodHeaderURL: productList[index]['headerURL'],
                             price: productList[index]['price'],

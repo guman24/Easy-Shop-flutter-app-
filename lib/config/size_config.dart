@@ -2,8 +2,8 @@
 import 'package:flutter/cupertino.dart';
 class SizeConfig{
   static MediaQueryData _mediaQueryData;
-  static double screenWidth;
-  static double screenHeight;
+  static double screenWidth=0;
+  static double screenHeight=0;
   static double blockSizeHorizontal;
   static double blockSizeVertical;
 
@@ -11,6 +11,7 @@ class SizeConfig{
   static double _safeAreaVertical;
   static double safeBlockHorizontal;
   static double safeBlockVertical;
+
 
   void init(BuildContext context) {
     _mediaQueryData = MediaQuery.of(context);
@@ -28,6 +29,13 @@ class SizeConfig{
     safeBlockVertical = (screenHeight -
         _safeAreaVertical) / 100;
   }
+
+  bool isMobile(){
+    if(safeBlockHorizontal<600){
+      return true;
+    }
+  }
+
 }
 
 

@@ -1,3 +1,4 @@
+import 'package:easyshop/local/products_data.dart';
 import 'package:easyshop/local/week_promotion_data.dart';
 import 'package:easyshop/screens/flash_sale.dart';
 import 'package:easyshop/utils/colors.dart';
@@ -103,7 +104,7 @@ class _FlashSaleWidgetState extends State<FlashSaleWidget> {
             ListView.builder(
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
-                itemCount: promotionList.length,
+                itemCount: productList.length,
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(
@@ -115,7 +116,7 @@ class _FlashSaleWidgetState extends State<FlashSaleWidget> {
                         children: <Widget>[
                           Container(
                             height: 200.0,
-                            child: Image.asset(promotionList[index]['photo']),
+                            child: Image.asset(productList[index]['headerURL']),
                           ),
                           Container(
                             child: Column(
@@ -124,9 +125,9 @@ class _FlashSaleWidgetState extends State<FlashSaleWidget> {
                               children: <Widget>[
                                 Padding(
                                   padding: const EdgeInsets.only(
-                                      left: 4.0, bottom: 3.0, right: 3.0),
+                                      left: 4.0, bottom: 5.0, right: 3.0),
                                   child: Text(
-                                    "Title",
+                                    productList[index]['name'],
                                     maxLines: 2,
                                     style:
                                         TextStyle(fontWeight: FontWeight.w700),
@@ -134,25 +135,25 @@ class _FlashSaleWidgetState extends State<FlashSaleWidget> {
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(
-                                      left: 4.0, bottom: 3.0),
+                                      left: 4.0, bottom: 5.0),
                                   child: Text(
-                                    "Rs. 500",
+                                    "Rs. ${productList[index]['oldPrice']}",
                                     style: TextStyle(
                                         decoration: TextDecoration.lineThrough),
                                   ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(
-                                      left: 4.0, bottom: 3.0),
+                                      left: 4.0, bottom: 5.0),
                                   child: Text(
-                                    "Rs. 200",
+                                    "Rs. ${productList[index]['price']}",
                                     style:
                                         TextStyle(fontWeight: FontWeight.w500),
                                   ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(
-                                      left: 4.0, bottom: 3.0),
+                                      left: 4.0, bottom: 5.0),
                                   child: Row(
                                     children: <Widget>[
                                       Icon(
@@ -175,7 +176,7 @@ class _FlashSaleWidgetState extends State<FlashSaleWidget> {
                                         Icons.star,
                                         color: Colors.yellow[700],
                                       ),
-                                      Text("(22)")
+                                      Text("(${productList[index]['totalFiveStar']})")
                                     ],
                                   ),
                                 ),
@@ -183,7 +184,7 @@ class _FlashSaleWidgetState extends State<FlashSaleWidget> {
                                   padding: const EdgeInsets.only(
                                       left: 4.0, bottom: 3.0),
                                   child: Text(
-                                    "30 Available",
+                                    "${productList[index]['stockAvailable']} Available",
                                     style:
                                         TextStyle(fontWeight: FontWeight.w500),
                                   ),

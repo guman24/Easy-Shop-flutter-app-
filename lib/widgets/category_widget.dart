@@ -1,3 +1,4 @@
+import 'package:easyshop/config/size_config.dart';
 import 'package:easyshop/local/category_data.dart';
 import 'package:easyshop/utils/colors.dart';
 import 'package:flutter/material.dart';
@@ -10,13 +11,16 @@ class CategoryWidget extends StatefulWidget {
 class _CategoryWidgetState extends State<CategoryWidget> {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Container(
         height: 250.0,
         child: GridView.builder(
             scrollDirection: Axis.horizontal,
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2),
+                crossAxisCount: 2,
+              childAspectRatio: SizeConfig.screenWidth<600?SizeConfig.safeBlockHorizontal/5:SizeConfig.safeBlockHorizontal/7
+            ),
             itemCount: categoryList.length,
             itemBuilder: (context, index) {
               return Padding(

@@ -1,4 +1,3 @@
-import 'package:easyshop/screens/home.dart';
 import 'package:easyshop/screens/splash.dart';
 import 'package:easyshop/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';

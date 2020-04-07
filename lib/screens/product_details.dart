@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class ProductsDetailsPage extends StatefulWidget {
+class ProductDetailsPage extends StatefulWidget {
   final String prodName;
   final double price;
   final String prodHeaderURL;
@@ -16,7 +16,7 @@ class ProductsDetailsPage extends StatefulWidget {
   final List<String> images;
   final String detailURL;
 
-  ProductsDetailsPage(
+  ProductDetailsPage(
       {this.prodName,
       this.price,
       this.prodHeaderURL,
@@ -25,10 +25,10 @@ class ProductsDetailsPage extends StatefulWidget {
       this.detailURL});
 
   @override
-  _ProductsDetailsPageState createState() => _ProductsDetailsPageState();
+  _ProductDetailsPageState createState() => _ProductDetailsPageState();
 }
 
-class _ProductsDetailsPageState extends State<ProductsDetailsPage> {
+class _ProductDetailsPageState extends State<ProductDetailsPage> {
   WebViewController _controller;
 
   Future<void> productDesc(String fileName, controller) async {
